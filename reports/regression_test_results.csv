@@ -1,0 +1,2 @@
+model,test_rmse,test_mae,test_r2
+GradientBoosting,21.495518912111994,14.632223982158756,0.5234807898345275

@@ -1,0 +1,14 @@
+seed: 42
+data:
+  raw_csv: data/raw/zomato_df_final_data.csv
+  raw_geojson: data/raw/sydney.geojson
+  processed_csv: data/processed/zomato_clean.csv
+features:
+  cost_bins: [20, 40, 60, 80, 120, 200]
+  min_votes: 5
+model:
+  test_size: 0.2
+  reg:
+    type: linear
+  clf:
+    candidates: [logreg, random_forest, xgb, svc]

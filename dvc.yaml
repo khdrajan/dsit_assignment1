@@ -1,0 +1,31 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - src/preprocess.py
+      - data/raw/zomato_df_final_data.csv
+    outs:
+      - data/processed/zomato_clean.csv
+  featurize:
+    cmd: python src/featurize.py
+    deps:
+      - src/featurize.py
+      - data/processed/zomato_clean.csv
+    outs:
+      - data/processed/zomato_clean.csv
+  train_regression:
+    cmd: python src/train_regression.py
+    deps:
+      - src/train_regression.py
+      - data/processed/zomato_clean.csv
+    outs:
+      - models/linreg.joblib
+      - reports/linreg_mse.txt
+  train_classification:
+    cmd: python src/train_classification.py
+    deps:
+      - src/train_classification.py
+      - data/processed/zomato_clean.csv
+    outs:
+      - models/logreg.joblib
+      - reports/logreg_report.txt

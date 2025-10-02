@@ -1,0 +1,36 @@
+{
+  "regression": {
+    "best_model": "GradientBoosting",
+    "model": "GradientBoosting",
+    "test_rmse": 21.495518912111997,
+    "test_mae": 14.632223982158756,
+    "test_r2": 0.5234807898345275
+  },
+  "classification": {
+    "best_model": "LogisticRegression",
+    "model": "LogisticRegression",
+    "test_acc": 0.943502824858757,
+    "test_f1": 0.5121951219512195,
+    "test_auc": 0.948472610541576
+  },
+  "n_samples": 7080,
+  "n_features_reg": 19,
+  "n_features_clf": 18,
+  "top_cuisines_engineered": [
+    "Cafe",
+    "Modern Australian",
+    "Chinese",
+    "Italian",
+    "Pizza",
+    "Thai",
+    "Japanese",
+    "Asian",
+    "Burger",
+    "Indian",
+    "Seafood",
+    "Vietnamese",
+    "Sushi",
+    "Pub Food",
+    "Bar Food"
+  ]
+}

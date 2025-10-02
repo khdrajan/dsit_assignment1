@@ -1,0 +1,15 @@
+pandas
+numpy
+matplotlib
+plotly
+geopandas
+shapely
+pyproj
+scikit-learn
+xgboost
+lightgbm
+joblib
+pyspark
+dvc
+gitpython
+pyyaml
