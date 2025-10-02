@@ -38,3 +38,64 @@ stages:
       hash: md5
       md5: 99e7c3a384b89ded451c10f9b2316acc
       size: 888778
+  modelling:
+    cmd: "jupyter nbconvert --to notebook --execute notebooks/02_modelling.ipynb --output
+      02_modelling_executed.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=1200\n"
+    deps:
+    - path: data/raw/zomato_df_final_data.csv
+      hash: md5
+      md5: 6bb696eac5889d15f134cee5ff09eb5d
+      size: 2690897
+    - path: notebooks/02_modelling.ipynb
+      hash: md5
+      md5: de352fcb6d3709b22aab67250c4e4e32
+      size: 137152
+    outs:
+    - path: notebooks/02_modelling_executed.ipynb
+      hash: md5
+      md5: e1fe0d3b51bd2251bb4955234717809b
+      size: 140666
+    - path: reports/classification_cv_results.csv
+      hash: md5
+      md5: 5cdac02e8936a0cc8e4e5720141b2fa5
+      size: 341
+    - path: reports/classification_feature_importance.csv
+      hash: md5
+      md5: 18aecf40e6753744f5dbc5b3c5dc924d
+      size: 556
+    - path: reports/classification_feature_importance_full.csv
+      hash: md5
+      md5: d23ce0ddaaa4b8758f8ed4f00a26eaf8
+      size: 683
+    - path: reports/classification_test_results.csv
+      hash: md5
+      md5: 90681f773514bc6d725e1c2e7bf78527
+      size: 109
+    - path: reports/figures/classification_confusion_matrix.png
+      hash: md5
+      md5: a48cfa4c19cc6e6904df6711a4140d05
+      size: 36073
+    - path: reports/figures/classification_permutation_importance.png
+      hash: md5
+      md5: 9ec1d800cc70f2a4600fa317ad52f0c1
+      size: 132884
+    - path: reports/figures/regression_permutation_importance.png
+      hash: md5
+      md5: 6e3e0bdb2eb15b514ce0d38827212ccd
+      size: 133761
+    - path: reports/regression_cv_results.csv
+      hash: md5
+      md5: bd56f00944a72dc0f2321d7fb324dc17
+      size: 329
+    - path: reports/regression_feature_importance.csv
+      hash: md5
+      md5: 9279ff815f59560a84d67cba33b5ef88
+      size: 577
+    - path: reports/regression_feature_importance_full.csv
+      hash: md5
+      md5: f1e31869135f0f9b681e3c0d6084022b
+      size: 735
+    - path: reports/regression_test_results.csv
+      hash: md5
+      md5: 7716832489b48ade2be8741a308e1170
+      size: 109
