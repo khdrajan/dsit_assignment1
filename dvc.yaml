@@ -2,40 +2,34 @@ stages:
   eda:
     cmd: |
       python -c "from pathlib import Path; Path('reports/figures').mkdir(parents=True, exist_ok=True)"
-      jupyter nbconvert --to notebook --execute notebooks/01_eda.ipynb \
-        --output 01_eda_executed.ipynb \
-        --output-dir notebooks \
-        --ExecutePreprocessor.timeout=1200
+      jupyter nbconvert --to notebook --execute notebooks/01_eda.ipynb --output 01_eda_executed.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=1200
     deps:
       - notebooks/01_eda.ipynb
       - data/raw/zomato_df_final_data.csv
       - data/raw/sydney.geojson
     outs:
       - notebooks/01_eda_executed.ipynb
-      - reports/figures/q3_cost_by_rating_beeswarm.png
       - reports/figures/distributions_and_hexbin.png
+      - reports/figures/q3_cost_by_rating_beeswarm.png
       - reports/figures/restaurants_per_suburb.png
       - reports/figures/map_cuisines_small_multiples.png
 
   modelling:
     cmd: |
-      python -c "from pathlib import Path; [Path(p).mkdir(parents=True, exist_ok=True) for p in ['reports','reports/figures']]"
-      jupyter nbconvert --to notebook --execute notebooks/02_modelling.ipynb \
-        --output 02_modelling_out.ipynb \
-        --output-dir notebooks \
-        --ExecutePreprocessor.timeout=1800
+      jupyter nbconvert --to notebook --execute notebooks/02_modelling.ipynb --output 02_modelling_executed.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=1200
     deps:
       - notebooks/02_modelling.ipynb
       - data/raw/zomato_df_final_data.csv
     outs:
-      - notebooks/02_modelling_out.ipynb
+      - notebooks/02_modelling_executed.ipynb
       - reports/classification_cv_results.csv
+      - reports/classification_feature_importance.csv
+      - reports/classification_feature_importance_full.csv
+      - reports/classification_test_results.csv
       - reports/regression_cv_results.csv
       - reports/regression_feature_importance.csv
-      - reports/classification_feature_importance.csv
-      - reports/figures/regression_permutation_importance.png
-      - reports/figures/classification_permutation_importance.png
-      - reports/figures/classification_confusion_matrix.png
-    metrics:
+      - reports/regression_feature_importance_full.csv
       - reports/regression_test_results.csv
-      - reports/classification_test_results.csv
+      - reports/figures/classification_confusion_matrix.png
+      - reports/figures/classification_permutation_importance.png
+      - reports/figures/regression_permutation_importance.png
