@@ -14,3 +14,5 @@ reports/regression_feature_importance_full.csv
 reports/classification_confusion_matrix.png
 reports/classification_permutation_importance.png
 reports/regression_permutation_importance.png
+reports/classification_feature_importance_full.csv
+reports/regression_feature_importance_full.csv
