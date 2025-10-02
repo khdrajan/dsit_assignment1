@@ -1,15 +1,4 @@
 stages:
-  eda:
-    cmd: |
-      python -c "import os; os.makedirs('reports/figures', exist_ok=True)"
-      jupyter nbconvert --to notebook --execute notebooks/01_eda.ipynb --output notebooks/01_eda_out.ipynb
-    deps:
-      - notebooks/01_eda.ipynb
-      - data/raw/zomato_df_final_data.csv
-      - data/raw/sydney.geojson
-    outs:
-      - reports/figures
-
   modelling:
     cmd: |
       jupyter nbconvert --to notebook --execute notebooks/02_modelling.ipynb --output notebooks/02_modelling_out.ipynb
@@ -18,11 +7,12 @@ stages:
       - data/raw/zomato_df_final_data.csv
     outs:
       - reports/regression_cv_results.csv
-      - reports/regression_test_results.csv
       - reports/classification_cv_results.csv
-      - reports/classification_test_results.csv
       - reports/regression_feature_importance.csv
       - reports/classification_feature_importance.csv
+      - reports/figures/regression_permutation_importance.png
+      - reports/figures/classification_permutation_importance.png
+      - reports/figures/classification_confusion_matrix.png
     metrics:
       - reports/regression_test_results.csv
       - reports/classification_test_results.csv
