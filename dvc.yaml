@@ -1,11 +1,30 @@
 stages:
+  eda:
+    cmd: |
+      python -c "import os; os.makedirs('reports/figures', exist_ok=True)"
+      jupyter nbconvert --to notebook --execute notebooks/01_eda.ipynb \
+        --output 01_eda_executed.ipynb \
+        --output-dir notebooks \
+        --ExecutePreprocessor.timeout=1200
+    deps:
+      - notebooks/01_eda.ipynb
+      - data/raw/zomato_df_final_data.csv
+      - data/raw/sydney.geojson
+    outs:
+      - notebooks/01_eda_executed.ipynb
+      - reports/figures
+
   modelling:
     cmd: |
-      jupyter nbconvert --to notebook --execute notebooks/02_modelling.ipynb --output notebooks/02_modelling_out.ipynb
+      jupyter nbconvert --to notebook --execute notebooks/02_modelling.ipynb \
+        --output 02_modelling_executed.ipynb \
+        --output-dir notebooks \
+        --ExecutePreprocessor.timeout=1200
     deps:
       - notebooks/02_modelling.ipynb
       - data/raw/zomato_df_final_data.csv
     outs:
+      - notebooks/02_modelling_executed.ipynb
       - reports/regression_cv_results.csv
       - reports/classification_cv_results.csv
       - reports/regression_feature_importance.csv
