@@ -23,9 +23,6 @@ stages:
       - reports/classification_test_results.csv
       - reports/regression_feature_importance.csv
       - reports/classification_feature_importance.csv
-      - reports/figures/regression_permutation_importance.png
-      - reports/figures/classification_permutation_importance.png
-      - reports/figures/classification_confusion_matrix.png
     metrics:
       - reports/regression_test_results.csv
       - reports/classification_test_results.csv
