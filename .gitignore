@@ -9,3 +9,8 @@ reports/classification_cv_results.csv
 reports/regression_cv_results.csv
 reports/classification_feature_importance.csv
 reports/regression_feature_importance.csv
+reports/classification_feature_importance_full.csv
+reports/regression_feature_importance_full.csv
+reports/classification_confusion_matrix.png
+reports/classification_permutation_importance.png
+reports/regression_permutation_importance.png
