@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  eda:
+    cmd: "python -c \"from pathlib import Path; Path('reports/figures').mkdir(parents=True,
+      exist_ok=True)\"\njupyter nbconvert --to notebook --execute notebooks/01_eda.ipynb
+      --output 01_eda_executed.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=1200\n"
+    deps:
+    - path: data/raw/sydney.geojson
+      hash: md5
+      md5: 4783b25a3a7a7519a6fdd1fb5e188473
+      size: 6867505
+    - path: data/raw/zomato_df_final_data.csv
+      hash: md5
+      md5: 6bb696eac5889d15f134cee5ff09eb5d
+      size: 2690897
+    - path: notebooks/01_eda.ipynb
+      hash: md5
+      md5: fadae302717f3957589d6eac800d8cbf
+      size: 2028359
+    outs:
+    - path: notebooks/01_eda_executed.ipynb
+      hash: md5
+      md5: 401a22f52603112eed5518586de284a1
+      size: 2045687
+    - path: reports/figures/distributions_and_hexbin.png
+      hash: md5
+      md5: c4e4362f20e3545c020985441e888aac
+      size: 72634
+    - path: reports/figures/map_cuisines_small_multiples.png
+      hash: md5
+      md5: 0c5009ea4439b19ece01bfc960107e61
+      size: 2398749
+    - path: reports/figures/q3_cost_by_rating_beeswarm.png
+      hash: md5
+      md5: f75a2efbaf0eeb979ad2c4a63c1ddf8f
+      size: 35930
+    - path: reports/figures/restaurants_per_suburb.png
+      hash: md5
+      md5: 99e7c3a384b89ded451c10f9b2316acc
+      size: 888778
