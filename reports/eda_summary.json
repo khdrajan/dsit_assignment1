@@ -1,10 +1,10 @@
 {
-  "rows": 10499,
-  "unique_cuisines": 134,
+  "rows": 10500,
+  "unique_cuisines": 426,
   "top3_suburbs": {
     "CBD": 476,
     "Surry Hills": 260,
     "Parramatta": 225
   },
-  "spearman_cost_votes": 0.2943281354503575
+  "spearman_cost_votes": 0.2942773211912138
 }
