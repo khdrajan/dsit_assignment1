@@ -5,3 +5,7 @@ reports/classification_cv_results.csv
 reports/regression_cv_results.csv
 reports/classification_feature_importance.csv
 reports/regression_feature_importance.csv
+reports/classification_cv_results.csv
+reports/regression_cv_results.csv
+reports/classification_feature_importance.csv
+reports/regression_feature_importance.csv
